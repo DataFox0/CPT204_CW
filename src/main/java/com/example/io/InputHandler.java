@@ -6,8 +6,8 @@ import java.util.*;
 public class InputHandler {
     public static InputData readInput() {
         // Read attractions and road data
-        Map<String, Attraction> attractions = CSVReader.readAttractions("resources/attractions.csv");
-        Graph roadNetwork = CSVReader.readRoads("resources/roads.csv");
+        Map<String, Attraction> attractions = CSVReader.readAttractions("..\\resources\\attractions.csv");
+        Graph roadNetwork = CSVReader.readRoads("..\\resources\\roads.csv");
 
         // Print the information of attraction
         System.out.println("Attractions:");

@@ -1,0 +1,8 @@
+Order Algorithm Time: 3.9716 ms
+Brute Force Time: 2819.5148 ms
+DP Algorithm Time: 3.9547 ms
+MST Algorithm Time: 2577.5463 ms
+Order Algorithm Time: 3.5952 ms
+Brute Force Time: 2722.6771 ms
+DP Algorithm Time: 4.1917 ms
+MST Algorithm Time: 2494.6795 ms

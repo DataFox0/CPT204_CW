@@ -1,0 +1,8 @@
+Order Algorithm Distance: 12235 miles
+Brute Force Distance: 6090 miles
+DP Algorithm Distance: 6090 miles
+MST Algorithm Distance: 6090 miles
+Order Algorithm Distance: 10860 miles
+Brute Force Distance: 5970 miles
+DP Algorithm Distance: 5970 miles
+MST Algorithm Distance: 5970 miles
