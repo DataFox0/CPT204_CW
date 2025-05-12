@@ -16,10 +16,14 @@ package com.example.graph;
 import java.util.*;
 
 public class Graph {
-    public Map<String, Map<String, Integer>> adjList;
+    private Map<String, Map<String, Integer>> adjList;
 
     public Graph() {
         adjList = new HashMap<>();
+    }
+
+    public Map<String, Map<String, Integer>> getadjList() {
+        return adjList;
     }
 
     // Add roads between cities

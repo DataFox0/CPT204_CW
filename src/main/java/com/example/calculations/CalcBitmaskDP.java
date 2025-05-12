@@ -34,7 +34,7 @@ public class CalcBitmaskDP {
             allCityNames.add(attractionLocations.get(attraction).getLocation());
 
         }
-        allCityNames.addAll(graph.adjList.keySet());
+        allCityNames.addAll(graph.getadjList().keySet());
 
         List<String> allCities = new ArrayList<>(allCityNames);
         int n = allCities.size();

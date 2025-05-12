@@ -51,7 +51,7 @@ public class CalcMST {
         for (String attraction : attractions) {
             allCityNames.add(attractionLocations.get(attraction).getLocation());
         }
-        allCityNames.addAll(graph.adjList.keySet());
+        allCityNames.addAll(graph.getadjList().keySet());
 
         List<String> allCities = new ArrayList<>(allCityNames);
         int n = allCities.size();
@@ -119,7 +119,7 @@ public class CalcMST {
         for (int i = 0; i < path.size() - 1; i++) {
             String city1 = path.get(i);
             String city2 = path.get(i + 1);
-            totalDistance += graph.adjList.get(city1).get(city2);
+            totalDistance += graph.getadjList().get(city1).get(city2);
         }
         return totalDistance;
     }

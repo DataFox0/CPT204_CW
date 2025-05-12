@@ -1,4 +1,6 @@
 import com.example.calculations.*;
+import com.example.graph.Attraction;
+import com.example.graph.Graph;
 import com.example.io.*;
 import java.util.*;
 
@@ -10,37 +12,43 @@ public class Main {
         //System.out.println("Destination: " + endCity);
         //System.out.println("Attractions: " + Arrays.toString(attractionNames));
 
-        if (input.selectedAttractions.get(0).equals("Null") 
-                || input.selectedAttractions.get(0).hashCode() == 0
+        String startCity = input.getstartCity();
+        String endCity = input.getendCity();
+        List<String> selectedAttractions = input.getselectedAttractions();
+        Map<String, Attraction> attractions = input.getattractions();
+        Graph roadNetwork = input.getroadNetwork();
+
+        if (selectedAttractions.get(0).equals("Null") 
+                || selectedAttractions.get(0).hashCode() == 0
         ) {
-                List<String> caseNullPath = input.roadNetwork.dijkstra(input.startCity, input.endCity);
-                RoutePrinter.printRoute("Shortest route:", caseNullPath, input.roadNetwork);
+                List<String> caseNullPath = roadNetwork.dijkstra(startCity, endCity);
+                RoutePrinter.printRoute("Shortest route:", caseNullPath, roadNetwork);
                 return;
         }
 
         CalcOrderedRoute caseOrdered = new CalcOrderedRoute();
         List<String> caseOrderedPath = caseOrdered.calculateRoute(
-                input.startCity, input.endCity, input.selectedAttractions, input.roadNetwork, input.attractions
+                startCity, endCity, selectedAttractions, roadNetwork, attractions
         );
-        RoutePrinter.printRoute("Shortest route (Ordered Calculation):", caseOrderedPath, input.roadNetwork);
+        RoutePrinter.printRoute("Shortest route (Ordered Calculation):", caseOrderedPath, roadNetwork);
 
         CalcBrute caseBrute = new CalcBrute();
         List<String> caseBrutePath = caseBrute.calculateRoute(
-                input.startCity, input.endCity, input.selectedAttractions, input.roadNetwork, input.attractions
+                startCity, endCity, selectedAttractions, roadNetwork, attractions
         );
-        RoutePrinter.printRoute("Shortest route (Brute Force):", caseBrutePath, input.roadNetwork);
+        RoutePrinter.printRoute("Shortest route (Brute Force):", caseBrutePath, roadNetwork);
 
         CalcBitmaskDP caseDP = new CalcBitmaskDP();
         List<String> caseDPPath = caseDP.calculateRoute(
-                input.startCity, input.endCity, input.selectedAttractions, input.roadNetwork, input.attractions
+                startCity, endCity, selectedAttractions, roadNetwork, attractions
         );
-        RoutePrinter.printRoute("Shortest route (Bitmask DP):", caseDPPath, input.roadNetwork);
+        RoutePrinter.printRoute("Shortest route (Bitmask DP):", caseDPPath, roadNetwork);
 
         CalcMST caseMST = new CalcMST();
         List<String> caseMSTPath = caseMST.calculateRoute(
-                input.startCity, input.endCity, input.selectedAttractions, input.roadNetwork, input.attractions
+                startCity, endCity, selectedAttractions, roadNetwork, attractions
         );
-        RoutePrinter.printRoute("Shortest route (MST):", caseMSTPath, input.roadNetwork);
+        RoutePrinter.printRoute("Shortest route (MST):", caseMSTPath, roadNetwork);
     }
 }
 
