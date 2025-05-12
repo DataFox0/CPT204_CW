@@ -40,17 +40,17 @@ public class CSVReader {
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             // Skip the header line (if any)
-            reader.readLine();  // 忽略第一行（表头）
+            reader.readLine();  // Ignore the first line (header)
 
             while ((line = reader.readLine()) != null) {
-                // 以逗号分割每一行数据
+                // Separate each row of data with commas
                 String[] values = line.split(",");
                 
-                // 假设 CSV 格式是 name, location
-                String name = values[0].trim();  // 景点名称
-                String location = values[1].trim();  // 景点位置
+                // Assuming the CSV format is name and location
+                String name = values[0].trim();  // Scenic spot name
+                String location = values[1].trim();  // Location of tourist attractions
 
-                // 创建 Attraction 对象并将其放入 Map
+                // Create an Attraction object and place it in a Map
                 Attraction attraction = new Attraction(name, location);
                 attractions.put(name, attraction);
             }

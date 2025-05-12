@@ -10,7 +10,9 @@ public class Main {
         //System.out.println("Destination: " + endCity);
         //System.out.println("Attractions: " + Arrays.toString(attractionNames));
 
-        if (input.selectedAttractions.get(0).equals("Null")) {
+        if (input.selectedAttractions.get(0).equals("Null") 
+                || input.selectedAttractions.get(0).hashCode() == 0
+        ) {
                 List<String> caseNullPath = input.roadNetwork.dijkstra(input.startCity, input.endCity);
                 RoutePrinter.printRoute("Shortest route:", caseNullPath, input.roadNetwork);
                 return;
