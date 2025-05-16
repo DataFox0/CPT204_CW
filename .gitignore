@@ -2,3 +2,4 @@ src/main.zip
 src/main/java/result/distance_results.txt
 src/main/java/result/distance_results.txt
 /src/main/java/result
+*.class

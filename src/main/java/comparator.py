@@ -72,13 +72,11 @@ def store_results(times_and_distances):
         runtime_file.write(f"Order Algorithm Time: {times_and_distances[0]} ms\n")
         runtime_file.write(f"Brute Force Time: {times_and_distances[2]} ms\n")
         runtime_file.write(f"DP Algorithm Time: {times_and_distances[4]} ms\n")
-        runtime_file.write(f"MST Algorithm Time: {times_and_distances[6]} ms\n")
 
     with open('result/distance_results.txt', 'a') as distance_file:
         distance_file.write(f"Order Algorithm Distance: {times_and_distances[1]} miles\n")
         distance_file.write(f"Brute Force Distance: {times_and_distances[3]} miles\n")
         distance_file.write(f"DP Algorithm Distance: {times_and_distances[5]} miles\n")
-        distance_file.write(f"MST Algorithm Distance: {times_and_distances[7]} miles\n")
 
 # Store inconsistent test data and output
 def store_inconsistent_results(start_city, end_city, formatted_attractions, java_output):

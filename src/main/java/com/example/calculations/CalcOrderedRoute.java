@@ -41,7 +41,7 @@ public class CalcOrderedRoute {
         List<String> lastPath = graph.dijkstra(currentCity, endingCity);
         fullPath.addAll(lastPath.subList(1, lastPath.size()));
 
-        System.out.println((System.nanoTime()-start)/1e6);
+        System.out.println("Running Time: " + (System.nanoTime()-start)/1e6 + "ms");
 
         return fullPath;
     }

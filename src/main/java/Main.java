@@ -43,12 +43,6 @@ public class Main {
                 startCity, endCity, selectedAttractions, roadNetwork, attractions
         );
         RoutePrinter.printRoute("Shortest route (Bitmask DP):", caseDPPath, roadNetwork);
-
-        CalcMST caseMST = new CalcMST();
-        List<String> caseMSTPath = caseMST.calculateRoute(
-                startCity, endCity, selectedAttractions, roadNetwork, attractions
-        );
-        RoutePrinter.printRoute("Shortest route (MST):", caseMSTPath, roadNetwork);
     }
 }
 

@@ -85,7 +85,7 @@ public class CalcBrute {
             }
         }
 
-        System.out.println((System.nanoTime()-startTime)/1e6);
+        System.out.println("Running Time: " + (System.nanoTime()-startTime)/1e6 + "ms");
 
         return bestPath;
     }
